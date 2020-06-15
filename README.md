@@ -1,25 +1,28 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # Switter
+
+## サイト概要
+おやつ専門のSNS
+
+### サイトテーマ
+３時のおやつ、仕事・勉強などの合間の糖分補給...<br>
+なにか食べたいけど、食べたいものが思いつかない！<br>
+そんな場合に活用して頂きたいSNSです。<br>
+コンビニのお菓子コーナーの陳列棚を眺めるような気軽な気持ちで見て貰えるようなサイトにしていきたいです。
+
+### テーマを選んだ理由
+休憩中に間食を取っている友人を見た際、確かに自分も作業の合間に空腹になることが多いなぁと思ったのがきっかけでした。<br>
+食べるからには美味しいものを探したい！しかし今までおやつを食べることが少なかった自分には、評判の良いものと悪いものの知識など全くありません。<br>
+しょっぱいおやつが食べたい時はしょっぱいものを、甘いおやつが食べたい時は甘いものを、その時の気分に合わせた最善のおやつを選べるようになるため、このテーマを選択しました。
+
+### ターゲットユーザ
+休憩中に間食を取ることが多いと考えられる、学生や社会人のみなさん
+
+### 主な利用シーン
+ふと小腹が空いた時、深夜に思わぬ飯テロに出くわした時
+
+## 設計書
+
+### 機能一覧
+[チャレンジ要素一覧](https://docs.google.com/spreadsheets/d/12FJ6jpzOwwRr0cD03E9wy7x77Y8GKzQCyWYBvnDTBa8/edit?usp=sharing)
+
+
