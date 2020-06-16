@@ -5,7 +5,6 @@ class SweetsController < ApplicationController
   end
   #おかしの新規作成
   def create
-    byebug
     sweet = current_user.sweets.new(sweet_params)
     #@sweet.user_id = current_user.id
     sweet.save
