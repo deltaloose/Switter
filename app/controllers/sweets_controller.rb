@@ -18,6 +18,16 @@ class SweetsController < ApplicationController
   def show
     @sweet = Sweet.find(params[:id])
   end
+  #おかし編集表示
+  def edit
+    @sweet = Sweet.find(params[:id])
+  end
+  #おかし編集
+  def update
+    sweet = Sweet.find(params[:id])
+    sweet.update(sweet_params)
+    redirect_to sweet_path
+  end
 
   #おかし投稿時のストロングパラメータ
   private
