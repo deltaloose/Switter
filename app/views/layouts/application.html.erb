@@ -10,6 +10,32 @@
   </head>
 
   <body>
+    <header class="">
+      <span class="">Switter</span>
+      <ul class="">
+        <% if user_signed_in? %>
+          <li class="header">
+            Favorite
+          </li>
+          <li class="header">
+            About
+          </li>
+          <li class="header">
+            <%= link_to "logout", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li class="header">
+            About
+          </li>
+          <li class="header">
+            <%= link_to "Sign up", new_user_registration_path %>
+          </li>
+          <li class="header">
+            <%= link_to "login", new_user_session_path %>
+          </li>
+        <% end %>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
