@@ -1,0 +1,26 @@
+<!-- カテゴリとランキングはrender -->
+
+
+<!-- 一覧部分 -->
+<h2>タイムライン</h2>
+<table class="">
+  <thead>
+    <tr>
+      <th class="">見出し１</th>
+      <th class="">見出し２</th>
+      <th class="">見出し３</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sweets.each do |sweet| %>
+    <tr>
+      <td>
+        <%= link_to sweet.name, sweet_path(sweet.id) %>
+      </td>
+      <td><%= sweet.opinion %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "＋", new_sweet_path %>
