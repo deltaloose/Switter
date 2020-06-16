@@ -5,9 +5,9 @@ class SweetsController < ApplicationController
   end
   #おかしの新規作成
   def create
-    @sweet = Sweet.new(sweet_params)
+    sweet = Sweet.new(sweet_params)
     #@sweet.user_id = current_user.id
-    @sweet.save
+    sweet.save
     redirect_to sweets_path
   end
   #おかし一覧
