@@ -1,0 +1,9 @@
+<%= form_for(@user, url: user_path) do |f| %>
+  <div class="">
+    <%= f.text_field :name, placeholder:"ユーザー名" %>
+  </div>
+  <div class="">
+    <!-- f.text_area :opinion -->
+  </div>
+  <%= f.submit '変更保存' %>
+<% end %>

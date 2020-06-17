@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @sweets = @user.sweets
   end
   def edit
-    if @user = current_user
+    if
+      @user = current_user
     else
        render :show
     end
