@@ -1,5 +1,5 @@
 <h2><%= @sweet.name %></h2>
 <p><%= @sweet.opinion %></p>
 <!-- attachment_image_tag @sweet, :image -->
-<!-- 編集ボタン -->
+<%= link_to "Edit", edit_sweet_path(@sweet.id) %>
 <!-- 削除ボタン -->
