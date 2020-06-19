@@ -15,7 +15,7 @@
     <% @sweets.each do |sweet| %>
     <tr>
       <td>
-        <%= link_to sweet.name, sweet_path(sweet.id) %>
+        <%= link_to "#{sweet.name}", sweet_path(sweet.id) %>
       </td>
       <td><%= sweet.opinion %></td>
     </tr>

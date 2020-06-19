@@ -28,7 +28,12 @@ class SweetsController < ApplicationController
     sweet.update(sweet_params)
     redirect_to sweet_path
   end
-
+  #おかし削除
+  def destroy
+    sweet = Sweet.find(params[:id])
+    sweet.destroy
+    redirect_to sweets_path
+  end
   #おかし投稿時のストロングパラメータ
   private
     def sweet_params

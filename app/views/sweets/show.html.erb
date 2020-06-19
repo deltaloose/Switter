@@ -2,4 +2,4 @@
 <p><%= @sweet.opinion %></p>
 <!-- attachment_image_tag @sweet, :image -->
 <%= link_to "Edit", edit_sweet_path(@sweet.id) %>
-<!-- 削除ボタン -->
+<%= link_to "Destroy", sweet_path(@sweet.id), method: :delete, data: { confirm: "本当に消しますか？" } %>
