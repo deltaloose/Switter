@@ -11,11 +11,13 @@
 
   <body>
     <header class="">
-      <span class="">Switter</span>
+      <span class="">
+        <%= link_to "Switter", sweets_path %>
+      </span>
       <ul class="">
         <% if user_signed_in? %>
           <li class="header">
-            Favorite
+            <%= link_to "Profile", user_path(current_user) %>
           </li>
           <li class="header">
             About

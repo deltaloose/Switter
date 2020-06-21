@@ -1,0 +1,22 @@
+<h2>ユーザー一覧</h2>
+<table class="">
+  <thead>
+    <tr>
+      <th class="">見出し１</th>
+      <th class="">見出し２</th>
+      <th class="">見出し３</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user.email %>
+      </td>
+      <td>
+        <!-- user.introduction -->
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

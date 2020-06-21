@@ -1,0 +1,7 @@
+<% if present? %>
+  <h2><%= @user.name %></h2>
+  <h3><%= @user.email %></h3>
+  <%= attachment_image_tag @user, :user_image, format: 'jpeg', size: "100x100" %>
+  <p>Favorite</p>
+  <%= link_to "Edit", edit_user_path(current_user) %>
+<% end %>
