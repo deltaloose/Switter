@@ -17,6 +17,7 @@ class SweetsController < ApplicationController
   #おかし詳細
   def show
     @sweet = Sweet.find(params[:id])
+    @sweet_comment = SweetComment.new
   end
   #おかし編集表示
   def edit

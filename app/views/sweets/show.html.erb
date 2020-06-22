@@ -1,5 +1,12 @@
 <h2><%= @sweet.name %></h2>
 <p><%= @sweet.opinion %></p>
-<!-- attachment_image_tag @sweet, :image -->
+<%= attachment_image_tag @sweet, :sweet_image %>
 <%= link_to "Edit", edit_sweet_path(@sweet.id) %>
 <%= link_to "Destroy", sweet_path(@sweet.id), method: :delete, data: { confirm: "本当に消しますか？" } %>
+<!-- コメント投稿 -->
+<%= form_for [@sweet, @sweet_comment] do |f| %>
+  <div class="">
+    <%= f.text_area :comment, placeholder: "コメント" %>
+  </div>
+  <%= f.submit "送信" %>
+<% end %>
