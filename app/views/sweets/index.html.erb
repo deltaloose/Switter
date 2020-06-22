@@ -9,6 +9,7 @@
       <th class="">タイトル</th>
       <th class="">詳細</th>
       <th class="">コメント数</th>
+      <th class="">いいね数</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,22 @@
       </td>
       <td><%= sweet.opinion %></td>
       <td><%= sweet.sweet_comments.count %>件</td>
+      <!-- いいね表示 -->
+      <% if sweet.favorited_by?(current_user) %>
+      <td>
+        <!-- いいねあるとき -->
+        <%= link_to sweet_favorites_path(sweet), method: :delete do %>
+        <%= sweet.favorites.count %>いいね
+        <% end %>
+      </td>
+      <% else %>
+      <td>
+        <!-- いいねないとき -->
+        <%= link_to sweet_favorites_path(sweet), method: :post do %>
+        <%= sweet.favorites.count %>いいね
+        <% end %>
+      </td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
