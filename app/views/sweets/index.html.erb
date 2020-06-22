@@ -46,4 +46,8 @@
   </tbody>
 </table>
 
-<%= link_to "＋", new_sweet_path %>
+<!-- ユーザーがログインしてたら -->
+<% if user_signed_in? %>
+  <%= link_to "＋", new_sweet_path %>
+<% else %>
+<% end %>

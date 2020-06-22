@@ -1,4 +1,5 @@
 class SweetsController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :create, :new]
   #編集URL直打ち防止
   before_action :correct_user, only: [:edit, :update]
   #おかし新規登録ページの表示
