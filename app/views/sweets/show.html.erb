@@ -1,5 +1,25 @@
 <h2><%= @sweet.name %></h2>
 <p><%= @sweet.opinion %></p>
-<!-- attachment_image_tag @sweet, :image -->
+<%= attachment_image_tag @sweet, :sweet_image, format: 'jpeg', size: "120x150" %><br>
 <%= link_to "Edit", edit_sweet_path(@sweet.id) %>
 <%= link_to "Destroy", sweet_path(@sweet.id), method: :delete, data: { confirm: "本当に消しますか？" } %>
+<!-- コメント表示 --><br>
+<table class="">
+  <tr>
+    <th>ユーザー</th>
+    <th>コメント</th>
+  </tr>
+  <% @sweet.sweet_comments.each do |sweet_comment| %>
+  <tr>
+    <td><%= sweet_comment.user.email %></td>
+    <td><%= sweet_comment.comment %></td>
+  </tr>
+  <% end %>
+</table>
+<!-- コメント投稿 -->
+<%= form_for [@sweet, @sweet_comment] do |f| %>
+  <div class="">
+    <%= f.text_area :comment, placeholder: "コメント" %>
+  </div>
+  <%= f.submit "送信" %>
+<% end %>

@@ -1,0 +1,2 @@
+module SweetCommentsHelper
+end

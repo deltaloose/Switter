@@ -6,7 +6,7 @@ class SweetsController < ApplicationController
   #おかしの新規作成
   def create
     sweet = current_user.sweets.new(sweet_params)
-    #@sweet.user_id = current_user.id
+    sweet.user_id = current_user.id
     sweet.save
     redirect_to sweets_path
   end
@@ -17,6 +17,7 @@ class SweetsController < ApplicationController
   #おかし詳細
   def show
     @sweet = Sweet.find(params[:id])
+    @sweet_comment = SweetComment.new
   end
   #おかし編集表示
   def edit

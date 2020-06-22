@@ -6,18 +6,19 @@
 <table class="">
   <thead>
     <tr>
-      <th class="">見出し１</th>
-      <th class="">見出し２</th>
-      <th class="">見出し３</th>
+      <th class="">タイトル</th>
+      <th class="">詳細</th>
+      <th class="">コメント数</th>
     </tr>
   </thead>
   <tbody>
     <% @sweets.each do |sweet| %>
     <tr>
       <td>
-        <%= link_to "#{sweet.name}", sweet_path(sweet.id) %>
+        <%= link_to sweet.name, sweet_path(sweet.id) %>
       </td>
       <td><%= sweet.opinion %></td>
+      <td><%= sweet.sweet_comments.count %></td>
     </tr>
     <% end %>
   </tbody>
