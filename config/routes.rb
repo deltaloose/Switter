@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index, :edit, :update]
   resources :sweets, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     resources :sweet_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
   end
 end
