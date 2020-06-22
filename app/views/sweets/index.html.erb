@@ -7,7 +7,6 @@
   <thead>
     <tr>
       <th class="">タイトル</th>
-      <th class="">詳細</th>
       <th class="">コメント数</th>
       <th class="">いいね数</th>
     </tr>
@@ -15,10 +14,7 @@
   <tbody>
     <% @sweets.each do |sweet| %>
     <tr>
-      <td>
-        <%= link_to sweet.name, sweet_path(sweet.id) %>
-      </td>
-      <td><%= sweet.opinion %></td>
+      <td><%= link_to sweet.name, sweet_path(sweet.id) %></td>
       <td><%= sweet.sweet_comments.count %>件</td>
       <!-- ユーザーがログインしてたら -->
       <% if user_signed_in? %>
@@ -52,7 +48,6 @@
   <thead>
     <tr>
       <th class="">タイトル</th>
-      <th class="">詳細</th>
       <th class="">コメント数</th>
       <th class="">いいね数</th>
     </tr>
@@ -60,10 +55,7 @@
   <tbody>
     <% @all_ranks.each do |sweet| %>
     <tr>
-      <td>
-        <%= link_to sweet.name, sweet_path(sweet.id) %>
-      </td>
-      <td><%= sweet.opinion %></td>
+      <td><%= link_to sweet.name, sweet_path(sweet.id) %></td>
       <td><%= sweet.sweet_comments.count %>件</td>
       <!-- ユーザーがログインしてたら -->
       <% if user_signed_in? %>
