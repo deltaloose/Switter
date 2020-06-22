@@ -1,4 +1,6 @@
 class SweetsController < ApplicationController
+  #編集URL直打ち防止
+  before_action :correct_user, only: [:edit, :update]
   #おかし新規登録ページの表示
   def new
     @sweet = Sweet.new
@@ -35,9 +37,17 @@ class SweetsController < ApplicationController
     sweet.destroy
     redirect_to sweets_path
   end
-  #おかし投稿時のストロングパラメータ
+
   private
+    #おかし投稿時のストロングパラメータ
     def sweet_params
       params.require(:sweet).permit(:name, :opinion, :sweet_image)
+    end
+    #編集URL直打ち防止メソッド
+    def correct_user
+      @sweet = Sweet.find(params[:id])
+      unless @sweet.user.id == current_user.id
+        redirect_to sweets_path
+      end
     end
 end
