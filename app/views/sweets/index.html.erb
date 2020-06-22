@@ -46,6 +46,52 @@
   </tbody>
 </table>
 
+<!-- ランキング -->
+<h2>いいねランキング</h2>
+<table class="">
+  <thead>
+    <tr>
+      <th class="">タイトル</th>
+      <th class="">詳細</th>
+      <th class="">コメント数</th>
+      <th class="">いいね数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @all_ranks.each do |sweet| %>
+    <tr>
+      <td>
+        <%= link_to sweet.name, sweet_path(sweet.id) %>
+      </td>
+      <td><%= sweet.opinion %></td>
+      <td><%= sweet.sweet_comments.count %>件</td>
+      <!-- ユーザーがログインしてたら -->
+      <% if user_signed_in? %>
+        <!-- いいね表示 -->
+        <% if sweet.favorited_by?(current_user) %>
+        <td>
+          <!-- いいねあるとき -->
+          <%= link_to sweet_favorites_path(sweet), method: :delete do %>
+          <%= sweet.favorites.count %>いいね
+          <% end %>
+        </td>
+        <% else %>
+        <td>
+          <!-- いいねないとき -->
+          <%= link_to sweet_favorites_path(sweet), method: :post do %>
+          <%= sweet.favorites.count %>いいね
+          <% end %>
+        </td>
+        <% end %>
+      <% else %><!-- ログインしてないとき -->
+        <td><%= sweet.favorites.count %>いいね</td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <!-- ユーザーがログインしてたら -->
 <% if user_signed_in? %>
   <%= link_to "＋", new_sweet_path %>
