@@ -1,12 +1,18 @@
 <!-- カテゴリとランキングはrender -->
 
-
+<!-- 検索バー -->
+<%= search_form_for @q do |f| %>
+  <%= f.label :name, "Keyword" %>
+  <%= f.search_field :name_or_opinion_cont %>
+  <%= f.submit "検索" %>
+<% end %>
+<%= link_to "検索クリア", sweets_path %>
 <!-- 一覧部分 -->
 <h2>タイムライン</h2>
 <table class="">
   <thead>
     <tr>
-      <th class="">タイトル</th>
+      <th class=""><%= sort_link(@q, :name, "タイトル") %></th>
       <th class="">コメント数</th>
       <th class="">いいね数</th>
     </tr>

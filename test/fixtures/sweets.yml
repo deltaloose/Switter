@@ -3,9 +3,28 @@
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-#one: {}
-# column: value
-#
-#two: {}
-# column: value
+
+  sweet1:
+    name: "ケーキ"
+    opinion: "ショートケーキ"
+
+  sweet2:
+    name: "ケーキ"
+    opinion: "チーズケーキ"
+
+  sweet3:
+    name: "せんべい"
+    opinion: "ポタポタ焼き"
+
+  sweet4:
+    name: "ジェラート"
+    opinion: "おしゃれ"
+
+  sweet5:
+    name: "ゼリー"
+    opinion: "白桃が好き"
+
+  sweet6:
+    name: "マカロン"
+    opinion: "女子力"
+
