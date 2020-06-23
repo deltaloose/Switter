@@ -17,6 +17,9 @@ class SweetsController < ApplicationController
   def index
     @sweets = Sweet.all
     @all_ranks = Sweet.find(Favorite.group(:sweet_id).order('count(sweet_id) desc').limit(3).pluck(:sweet_id))
+    #おかし検索
+    @q = Sweet.ransack(params[:q])
+    @sweetsq = @q.result(distinct: true)
   end
   #おかし詳細
   def show

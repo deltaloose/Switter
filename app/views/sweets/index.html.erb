@@ -1,6 +1,13 @@
 <!-- カテゴリとランキングはrender -->
 
-
+<!-- 検索バー -->
+<%= search_form_for @q do |f| %>
+  <%= f.label :name, "Keyword" %>
+  <%= f.search_field :name_cont %>
+  <%= f.submit "検索" %>
+<% end %>
+<!-- 検索結果 -->
+<%= render 'sweets/search', sweetsq: @sweetsq %>
 <!-- 一覧部分 -->
 <h2>タイムライン</h2>
 <table class="">
