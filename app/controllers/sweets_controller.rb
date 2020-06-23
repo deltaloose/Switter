@@ -1,4 +1,5 @@
 class SweetsController < ApplicationController
+  #未ログイン時、指定ページへ移動不可
   before_action :authenticate_user!, only: [:edit, :create, :new]
   #編集URL直打ち防止
   before_action :correct_user, only: [:edit, :update]
