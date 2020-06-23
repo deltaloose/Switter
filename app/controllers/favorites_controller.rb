@@ -3,6 +3,7 @@ class FavoritesController < ApplicationController
     sweet = Sweet.find(params[:sweet_id])
     favorite = current_user.favorites.new(sweet_id: sweet.id)
     favorite.save
+    sweet.create_notification_favorite!(current_user)
     redirect_to request.referer
   end
   def destroy

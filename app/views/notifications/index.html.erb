@@ -1,0 +1,18 @@
+<h2>通知</h2>
+<% if @notifications.exists? %>
+  <% @notifications.each do |notification| %>
+    <%= link_to user_path(notification.user) do%>
+      <%= notification.user.name %>さんが
+
+      <% case notification.action %>
+        <% when 'favorite' %>
+        <%= link_to 'あなたの投稿', sweet_path(notification.sweet_id) %></b>にいいねしました。
+        <% when 'sweet_comment' %>
+        <%= link_to 'あなたの投稿', sweet_path(notification.sweet_id) %></b>にコメントしました。<br>
+        <%= SweetComment.find_by(id: notification.sweet_comment_id).comment %>
+      <% end %>
+
+
+    <% end %>
+  <% end %>
+<% end %>

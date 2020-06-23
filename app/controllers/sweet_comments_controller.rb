@@ -5,6 +5,7 @@ class SweetCommentsController < ApplicationController
     comment = current_user.sweet_comments.new(sweet_comment_params)
     comment.sweet_id = sweet.id
     comment.save
+    comment.sweet_id.create_notification_sweet_comment!(current_user, comment.id)
     redirect_to sweet_path(sweet)
   end
 #コメント投稿時のストロングパラメータ
