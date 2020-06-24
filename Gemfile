@@ -7,6 +7,7 @@ gem 'devise'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'ransack'
+gem 'acts-as-taggable-on', '~> 6.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
