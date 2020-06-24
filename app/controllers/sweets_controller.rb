@@ -48,7 +48,7 @@ class SweetsController < ApplicationController
   private
     #おかし投稿時のストロングパラメータ
     def sweet_params
-      params.require(:sweet).permit(:name, :opinion, :sweet_image)
+      params.require(:sweet).permit(:name, :opinion, :sweet_image, :tag_list)
     end
     #編集URL直打ち防止メソッド
     def correct_user
