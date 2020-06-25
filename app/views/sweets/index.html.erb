@@ -3,7 +3,7 @@
 <!-- 検索バー -->
 <%= search_form_for @q do |f| %>
   <!-- f.label :name, "Keyword" %-->
-  <%= f.search_field :name_or_opinion_cont, placeholder:"おかし検索"  %>
+  <%= f.search_field :name_or_opinion_or_tags_name_cont, placeholder:"おかし検索"  %>
   <%= f.submit "検索" %>
 <% end %>
 <%= link_to "検索クリア", sweets_path %>

@@ -18,7 +18,15 @@ class SweetsController < ApplicationController
   def index
     #@sweets = Sweet.all
     #おかし検索(allも含む)
-    @q = Sweet.ransack(params[:q])
+    groupings = [] #空配列
+    if params[:q].present?
+      keywords = params[:q][:type_name_cont].split(/[\p{brank}\s]+/)
+      keywords.each { |value| groupings.push(type_name_cont: value) }
+    end
+    @q = Sweet.ransack(
+      combinator: 'and',
+      groupings: groupings
+    )
     @sweets = @q.result(distinct: true)
     #いいねランキング
     @all_ranks = Sweet.find(Favorite.group(:sweet_id).order('count(sweet_id) desc').limit(3).pluck(:sweet_id))
