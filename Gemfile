@@ -8,6 +8,11 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'ransack'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem "bootstrap-sass",'~> 3.3.6'
+gem "jquery-rails"
+gem "pry-byebug"
+gem 'kaminari','~> 1.1.1'
+gem 'font-awesome-sass', '~> 5.4.1'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -67,3 +72,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'dotenv-rails'
+group :production do
+ gem 'mysql2'
+end
