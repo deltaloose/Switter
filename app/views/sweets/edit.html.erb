@@ -9,8 +9,8 @@
   <div class="">
     <%= f.attachment_field :sweet_image %>
   </div>
-  <div class="">
-    <%= text_field_tag 'sweet[tag_list]', @sweet.tag_list.join(","), placeholder:"タグ" %>
-  </div>
+  <!--div class="">
+    <= text_field_tag 'sweet[tag_list]', @sweet.tag_list.join(","), placeholder:"タグ" %>
+  </div-->
   <%= f.submit '変更保存' %>
 <% end %>

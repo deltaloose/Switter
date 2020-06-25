@@ -1,6 +1,6 @@
 <h2><%= @sweet.name %></h2>
-<% @sweet.tag_list.each do |tag| %>
-  <%= tag %>
+<!-- @sweet.tag_list.each do |tag| %>
+  <= tag %-->
 <% end %>
 <p><%= @sweet.opinion %></p>
 <%= attachment_image_tag @sweet, :sweet_image, format: 'jpeg', fallback:"no_image2.jpg", class: "img" %>

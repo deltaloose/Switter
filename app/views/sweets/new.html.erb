@@ -12,8 +12,8 @@
     <%= f.attachment_field :sweet_image %>
   </div>
   <div class="">
-    <%= f.label :タグ %>
-    <%= text_field_tag 'sweet[tag_list]', @sweet.tag_list.join(",") %>
+    <!--= f.label :タグ %>
+    <= text_field_tag 'sweet[tag_list]', @sweet.tag_list.join(",") %-->
   </div>
   <%= f.submit '登録' %>
 <% end %>
