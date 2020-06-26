@@ -6,5 +6,5 @@ class Sweet < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
   attachment :sweet_image
-  acts_as_taggable #タグのエイリアス
+  #acts_as_taggable #タグのエイリアス
 end
