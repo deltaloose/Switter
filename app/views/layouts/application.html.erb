@@ -10,11 +10,11 @@
   </head>
 
   <body>
-    <header class="">
-      <span class="">
+    <header class="sweet">
+      <span class="title">
         <%= link_to "Switter", sweets_path %>
       </span>
-      <ul class="">
+      <ul class="ul-header">
         <% if user_signed_in? %>
           <li class="header">
             <%= link_to "Profile", user_path(current_user) %>

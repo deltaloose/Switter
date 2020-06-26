@@ -20,7 +20,71 @@
 * }
 */
 
+/*拡張言語をscssへ変更*/
+/*bootstrapgemに必要*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/*font-awesome追加*/
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 10%;
+}
+
+body {
+  background-color: #FFFFCC;
+}
+
+.sweet-body {
+  padding-top: 8%;
+}
+
+.title {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding-top: 3%;
+}
+
+.index-title {
+
+}
+
+.sweet {
+  height: 12%;
+  background-color: #FFFF66;
+  //image-url("header.jpg")
+}
+
+.ul-header {
+  list-style: none;
+  text-align: right;
+}
+
+.header {
+  display: inline;
+  padding-right: 15px;
+}
+
 .img {
   width: 30%;
   height: auto;
+}
+
+.search {
+  position: absolute;
+  padding-top: 3%;
+}
+
+.search-btn {
+  position: absolute;
+  left: 81%;
+  margin: 0;
 }

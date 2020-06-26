@@ -1,14 +1,20 @@
+
 <!-- カテゴリとランキングはrender -->
 
-<!-- 検索バー -->
-<%= search_form_for @q do |f| %>
-  <!-- f.label :name, "Keyword" %-->
-  <%= f.search_field :name_or_opinion_cont, placeholder:"おかし検索"  %>
-  <%= f.submit "検索" %>
-<% end %>
-<%= link_to "検索クリア", sweets_path %>
+<div class="search">
+  <!-- 検索バー -->
+  <%= search_form_for @q do |f| %>
+    <!-- f.label :name, "Keyword" %-->
+    <%= f.search_field :name_or_opinion_cont, placeholder:"おかし検索"  %>
+      <%= button_tag :type => "submit", :class =>"search-btn" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+  <% end %>
+  <%= link_to "検索クリア", sweets_path %>
+</div>
+<div class="sweet-body">
 <!-- 一覧部分 -->
-<h2>タイムライン</h2>
+<h2 class="index-title">タイムライン</h2>
 <table class="">
   <thead>
     <tr>
@@ -95,3 +101,4 @@
   <%= link_to "＋", new_sweet_path %>
 <% else %>
 <% end %>
+</div>
