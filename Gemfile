@@ -7,7 +7,6 @@ gem 'devise'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'ransack'
-gem 'acts-as-taggable-on', '~> 6.0'
 gem "bootstrap-sass",'~> 3.3.6'
 gem "jquery-rails"
 gem "pry-byebug"
