@@ -8,35 +8,38 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <header class="sweet">
-      <span class="title">
-        <%= link_to "Switter", sweets_path %>
-      </span>
-      <ul class="ul-header">
-        <% if user_signed_in? %>
-          <li class="header">
-            <%= link_to "Profile", user_path(current_user) %>
-          </li>
-          <li class="header">
-            About
-          </li>
-          <li class="header">
-            <%= link_to "logout", destroy_user_session_path, method: :delete %>
-          </li>
-        <% else %>
-          <li class="header">
-            About
-          </li>
-          <li class="header">
-            <%= link_to "Sign up", new_user_registration_path %>
-          </li>
-          <li class="header">
-            <%= link_to "login", new_user_session_path %>
-          </li>
-        <% end %>
-      </ul>
+      <div class="container">
+        <div class="row">
+          <h1 class="title">
+            <%= link_to "Switter", sweets_path %>
+          </h1>
+          <ul class="ul-header">
+            <% if user_signed_in? %>
+              <li class="header">
+                <%= link_to "Profile", user_path(current_user) %>
+              </li>
+              <li class="header">
+                About
+              </li>
+              <li class="header">
+                <%= link_to "logout", destroy_user_session_path, method: :delete %>
+              </li>
+            <% else %>
+              <li class="header">
+                About
+              </li>
+              <li class="header">
+                <%= link_to "Sign up", new_user_registration_path %>
+              </li>
+              <li class="header">
+                <%= link_to "login", new_user_session_path %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </header>
     <%= yield %>
   </body>

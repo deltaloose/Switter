@@ -30,7 +30,6 @@
 @import "font-awesome";
 
 header {
-  position: absolute;
   top: 0;
   left: 0;
   margin: 0;
@@ -43,14 +42,14 @@ body {
 }
 
 .sweet-body {
-  padding-top: 8%;
+  padding-top: 0%;
 }
 
 .title {
   display: inline-block;
   width: 100%;
   text-align: center;
-  padding-top: 3%;
+  padding-top: 0%;
 }
 
 .index-title {
@@ -58,9 +57,8 @@ body {
 }
 
 .sweet {
-  height: 12%;
-  background-color: #FFFF66;
-  //image-url("header.jpg")
+  //background-color: #FFFF66;
+  background-image: url("header.jpg");
 }
 
 .ul-header {
@@ -80,7 +78,6 @@ body {
 
 .search {
   position: absolute;
-  padding-top: 3%;
 }
 
 .search-btn {
@@ -88,3 +85,14 @@ body {
   left: 81%;
   margin: 0;
 }
+
+.favorite-ranking {
+  padding-left: 5%;
+}
+
+.sweets-index {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
