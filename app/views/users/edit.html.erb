@@ -1,14 +1,27 @@
-<div class="sweet-body">
-  <%= form_for(@user, url: user_path) do |f| %>
-    <div class="">
-      <%= f.text_field :name, placeholder:"ユーザー名" %>
+<div class="container">
+  <div class="row">
+    <div class="sweet-body">
+      <div class="col-xs-9">
+        <h2>会員情報編集</h2>
+        <%= form_for(@user, url: user_path) do |f| %>
+          <div class="">
+            <%= f.text_field :name, placeholder:"ユーザー名" %>
+          </div>
+          <div class="">
+            <!-- f.text_area :opinion -->
+          </div>
+          <div class="">
+            <%= f.attachment_field :user_image %>
+          </div>
+          <%= f.submit '変更保存' %>
+        <% end %>
+      </div>
+      <div class="col-xs-1">
+        <%= render 'sweets/newbtn' %>
+      </div>
+      <div class="col-xs-2">
+        <%= render 'sweets/search', q: @q %>
+      </div>
     </div>
-    <div class="">
-      <!-- f.text_area :opinion -->
-    </div>
-    <div class="">
-      <%= f.attachment_field :user_image %>
-    </div>
-    <%= f.submit '変更保存' %>
-  <% end %>
+  </div>
 </div>

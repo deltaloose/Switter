@@ -20,7 +20,7 @@
         </div>
       </div>
     </div-->
-    <div class="col-xs-7">
+    <div class="col-xs-9">
       <div class="sweets-index">
         <!-- 一覧部分 -->
         <h2 class="index-title">全投稿</h2>
@@ -28,13 +28,11 @@
         <%= render 'sweets/list', sweets: @sweets %>
       </div>
     </div>
+    <div class="col-xs-1">
+      <%= render 'sweets/newbtn' %>
+    </div>
     <div class="col-xs-2">
       <%= render 'sweets/search', q: @q %>
     </div>
   </div>
-  <!-- ユーザーがログインしてたら -->
-  <% if user_signed_in? %>
-    <%= link_to "＋", new_sweet_path %>
-  <% else %>
-  <% end %>
 </div>

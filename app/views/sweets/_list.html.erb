@@ -6,39 +6,42 @@
           <%= attachment_image_tag sweet, :sweet_image, format: 'jpeg', fallback:"no_image2.jpg", class: "index-img" %>
         </div>
       </div>
-      <li class="sweet-info">
-        <%= link_to sweet.name, sweet_path(sweet.id) %>
-      </li>
-      <li class="sweet-info">
-        <i class="far fa-comments"></i>
-        <%= sweet.sweet_comments.count %>
-      </li>
-      <!-- ユーザーがログインしてたら -->
-      <% if user_signed_in? %>
-        <!-- いいね表示 -->
-        <% if sweet.favorited_by?(current_user) %>
-          <!-- いいねあるとき -->
+      <div class="sweet-link">
+        <h4 class="sweet-info">
+          <%= link_to sweet.name, sweet_path(sweet.id) %>
+        </h4>
+        <li class="sweet-info">
+          <i class="far fa-comments"></i>
+          <%= sweet.sweet_comments.count %>
+        </li>
+        <!-- ユーザーがログインしてたら -->
+        <% if user_signed_in? %>
+          <!-- いいね表示 -->
+          <% if sweet.favorited_by?(current_user) %>
+            <!-- いいねあるとき -->
+            <li class="sweet-info">
+              <%= link_to sweet_favorites_path(sweet), method: :delete do %>
+                <i class="fas fa-heart"></i>
+                <%= sweet.favorites.count %>
+              <% end %>
+            </li>
+          <% else %>
+            <!-- いいねないとき -->
+            <li class="sweet-info">
+              <%= link_to sweet_favorites_path(sweet), method: :post do %>
+                <i class="far fa-heart"></i>
+                <%= sweet.favorites.count %>
+              <% end %>
+            </li>
+          <% end %>
+        <% else %><!-- ログインしてないとき -->
           <li class="sweet-info">
-            <%= link_to sweet_favorites_path(sweet), method: :delete do %>
-              <i class="fas fa-heart"></i>
-              <%= sweet.favorites.count %>
-            <% end %>
-          </li>
-        <% else %>
-          <!-- いいねないとき -->
-          <li class="sweet-info">
-            <%= link_to sweet_favorites_path(sweet), method: :post do %>
-              <i class="far fa-heart"></i>
-              <%= sweet.favorites.count %>
-            <% end %>
+            <i class="far fa-heart"></i>
+            <%= sweet.favorites.count %>
           </li>
         <% end %>
-      <% else %><!-- ログインしてないとき -->
-        <li class="sweet-info">
-          <i class="far fa-heart"></i>
-          <%= sweet.favorites.count %>
-        </li>
-      <% end %>
+      </div>
+      <hr class="index-line">
     </div>
   </div>
 <% end %>

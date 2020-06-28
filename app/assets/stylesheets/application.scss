@@ -45,6 +45,11 @@ li {
   list-style: none;
 }
 
+hr {
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
 .sweet-body {
   padding-top: 0%;
 }
@@ -56,10 +61,6 @@ li {
   padding-top: 0%;
 }
 
-.index-title {
-
-}
-
 .sweet {
   //background-color: #FFFF66;
   background-image: url("header.jpg");
@@ -68,6 +69,10 @@ li {
 .sweet-info {
   display: inline;
   padding-left: 3%;
+}
+
+.sweet-link {
+  padding-top: 6%;
 }
 
 .ul-header {
@@ -84,7 +89,13 @@ li {
 }
 
 .index-img {
+  width: 100%;
+  height: 100%;
+}
 
+.index-line {
+  margin-bottom: 6%;
+  border-top: 1px solid #000;
 }
 
 .search {
@@ -110,3 +121,12 @@ li {
 .show-li {
   padding-left: 20%;
 }
+
+.sweet-new-btn {
+  padding-left: 70%;
+}
+
+.user-photo {
+  margin-top: 37%;
+}
+

@@ -4,27 +4,26 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 
-  sweet1:
-    name: "ケーキ"
-    opinion: "ショートケーキ"
+#  sweet1:
+#    name: "ケーキ"
+#    opinion: "ショートケーキ"
 
-  sweet2:
-    name: "ケーキ"
-    opinion: "チーズケーキ"
+#  sweet2:
+#    name: "ケーキ"
+#    opinion: "チーズケーキ"
 
-  sweet3:
-    name: "せんべい"
-    opinion: "ポタポタ焼き"
+#  sweet3:
+#    name: "せんべい"
+#    opinion: "ポタポタ焼き"
 
-  sweet4:
-    name: "ジェラート"
-    opinion: "おしゃれ"
+#  sweet4:
+#    name: "ジェラート"
+#    opinion: "おしゃれ"
 
-  sweet5:
-    name: "ゼリー"
-    opinion: "白桃が好き"
+#  sweet5:
+#    name: "ゼリー"
+#    opinion: "白桃が好き"
 
-  sweet6:
-    name: "マカロン"
-    opinion: "女子力"
-
+#  sweet6:
+#    name: "マカロン"
+#    opinion: "女子力"
