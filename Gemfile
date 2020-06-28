@@ -12,6 +12,7 @@ gem "jquery-rails"
 gem "pry-byebug"
 gem 'kaminari','~> 1.1.1'
 gem 'font-awesome-sass', '~> 5.4.1'
+gem 'acts-as-taggable-on'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

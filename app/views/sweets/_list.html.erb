@@ -42,6 +42,11 @@
             <%= sweet.favorites.count %>
           </li>
         <% end %>
+        <li>
+          <% sweet.tag_list.each do |tag| %>
+            <%= tag %>
+          <% end %>
+        </li>
       </div>
       <hr class="index-line">
     </div>
