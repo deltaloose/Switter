@@ -9,12 +9,12 @@
           <table class="">
             <thead>
               <tr>
-                <th class="">タイトル</th>
-                <th class="">コメント数</th>
+                <th class=""></th>
+                <th class=""></th>
               </tr>
             </thead>
             <tbody>
-              <%= render 'sweets/table', sweets: @all_ranks %>
+              <!-- render 'sweets/table', sweets: @all_ranks %-->
             </tbody>
           </table>
         </div>
@@ -23,18 +23,9 @@
     <div class="col-xs-7">
       <div class="sweets-index">
         <!-- 一覧部分 -->
-        <h2 class="index-title">タイムライン</h2>
-        <table class="">
-          <thead>
-            <tr>
-              <th class=""><%= sort_link(@q, :name, "タイトル") %></th>
-              <th class="">コメント数</th>
-            </tr>
-          </thead>
-          <tbody>
-            <%= render 'sweets/table', sweets: @sweets %>
-          </tbody>
-        </table>
+        <h2 class="index-title">全投稿</h2>
+        <%= sort_link(@q, :name, "おかし名ソート") %>
+        <%= render 'sweets/list', sweets: @sweets %>
       </div>
     </div>
     <div class="col-xs-2">

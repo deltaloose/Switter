@@ -41,6 +41,10 @@ body {
   background-color: #FFFFCC;
 }
 
+li {
+  list-style: none;
+}
+
 .sweet-body {
   padding-top: 0%;
 }
@@ -61,8 +65,12 @@ body {
   background-image: url("header.jpg");
 }
 
+.sweet-info {
+  display: inline;
+  padding-left: 3%;
+}
+
 .ul-header {
-  list-style: none;
   text-align: right;
 }
 
@@ -72,8 +80,11 @@ body {
 }
 
 .img {
-  width: 30%;
   height: auto;
+}
+
+.index-img {
+
 }
 
 .search {
@@ -96,3 +107,6 @@ body {
   width: 50%;
 }
 
+.show-li {
+  padding-left: 20%;
+}
