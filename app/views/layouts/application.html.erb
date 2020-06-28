@@ -9,32 +9,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <header class="sweet">
-      <div class="container">
-        <div class="row">
-          <h1 class="title">
-            <%= link_to "Switter", sweets_path %>
-          </h1>
-          <ul class="ul-header">
-            <% if user_signed_in? %>
-              <li class="header">
-                <%= link_to "プロフィール", user_path(current_user) %>
-              </li>
-              <li class="header">
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-              </li>
-            <% else %>
-              <li class="header">
-                <%= link_to "会員登録", new_user_registration_path %>
-              </li>
-              <li class="header">
-                <%= link_to "ログイン", new_user_session_path %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
+    <div class="sweet-content">
+      <div class="sweet">
+        <header>
+          <div class="container">
+            <div class="row">
+              <h1 class="title">
+                <%= link_to "Switter", sweets_path, :style=>"color:#FFF;" %>
+              </h1>
+              <ul class="ul-header">
+                <% if user_signed_in? %>
+                  <li class="header">
+                    <%= link_to "プロフィール", user_path(current_user), :style=>"color:#FFF;" %>
+                  </li>
+                  <li class="header">
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :style=>"color:#FFF;" %>
+                  </li>
+                <% else %>
+                  <li class="header">
+                    <%= link_to "会員登録", new_user_registration_path, :style=>"color:#FFF;" %>
+                  </li>
+                  <li class="header">
+                    <%= link_to "ログイン", new_user_session_path, :style=>"color:#FFF;" %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </header>
       </div>
-    </header>
+    </div>
     <%= yield %>
   </body>
 </html>

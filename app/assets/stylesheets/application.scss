@@ -59,11 +59,16 @@ hr {
   width: 100%;
   text-align: center;
   padding-top: 0%;
+  color: #FFF;
+}
+
+.sweet-content {
+  //background-color: #FFFF66;
+  background-image: image-url("header.jpg");
 }
 
 .sweet {
-  //background-color: #FFFF66;
-  background-image: image-url("header.jpg");
+  background-color: rgba( 0, 0, 0, 0.5);
 }
 
 .sweet-info {
