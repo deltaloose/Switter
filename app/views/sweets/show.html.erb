@@ -1,31 +1,49 @@
-<h2><%= @sweet.name %></h2>
-<!-- @sweet.tag_list.each do |tag| %>
-  <= tag %-->
-<!-- end %-->
-<p><%= @sweet.opinion %></p>
-<%= attachment_image_tag @sweet, :sweet_image, format: 'jpeg', fallback:"no_image2.jpg", class: "img" %>
-<!-- もし投稿ユーザーであれば表示 -->
-<% if @sweet.user == current_user %>
-  <%= link_to "Edit", edit_sweet_path(@sweet.id) %>
-  <%= link_to "Destroy", sweet_path(@sweet.id), method: :delete, data: { confirm: "本当に消しますか？" } %>
-<% end %>
-<!-- コメント表示 --><br>
-<table class="">
-  <tr>
-    <th>ユーザー</th>
-    <th>コメント</th>
-  </tr>
-  <% @sweet.sweet_comments.each do |sweet_comment| %>
-  <tr>
-    <td><%= sweet_comment.user.name %></td>
-    <td><%= sweet_comment.comment %></td>
-  </tr>
-  <% end %>
-</table>
-<!-- コメント投稿 -->
-<%= form_for [@sweet, @sweet_comment] do |f| %>
-  <div class="">
-    <%= f.text_area :comment, placeholder: "コメント" %>
+<div class="container">
+  <div class="row">
+    <div class="sweet-body">
+      <div class="col-xs-6">
+        <h2><%= @sweet.name %></h2>
+        <!-- @sweet.tag_list.each do |tag| %>
+          <= tag %-->
+        <!-- end %-->
+        <p><%= @sweet.opinion %></p>
+        <%= attachment_image_tag @sweet, :sweet_image, format: 'jpeg', fallback:"no_image2.jpg", class: "img" %>
+        <!-- もしログインしていて投稿ユーザーであれば表示 --><br>
+        <% if user_signed_in? %>
+          <% if @sweet.user == current_user %>
+            <%= link_to "Edit", edit_sweet_path(@sweet.id) %>
+            <%= link_to "Destroy", sweet_path(@sweet.id), method: :delete, data: { confirm: "本当に消しますか？" } %>
+          <% end %>
+        <% else %>
+        <% end %>
+      </div>
+      <div class="col-xs-3">
+        <!-- コメント表示 --><br>
+        <% @sweet.sweet_comments.each do |sweet_comment| %>
+          <%= attachment_image_tag sweet_comment.user, :user_image, format: 'jpeg', size: "40x40", fallback: "no_image.jpg", class: "img-circle pull-left profile-thumb" %>
+          <li class="show-li">
+            <%= link_to user_path(sweet_comment.user) do %>
+              <%= sweet_comment.user.name %>
+            <% end %>
+          </li>
+          <li class="show-li">
+            コメント：<%= sweet_comment.comment %>
+          </li><br>
+        <% end %>
+        <!-- コメント投稿 -->
+        <%= form_for [@sweet, @sweet_comment] do |f| %>
+          <div class="">
+            <%= f.text_area :comment, placeholder: "コメント" %>
+          </div>
+          <%= f.submit "送信" %>
+        <% end %>
+      </div>
+      <div class="col-xs-1">
+        <%= render 'sweets/newbtn' %>
+      </div>
+      <div class="col-xs-2">
+        <%= render 'sweets/search', q: @q %>
+      </div>
+    </div>
   </div>
-  <%= f.submit "送信" %>
-<% end %>
+</div>

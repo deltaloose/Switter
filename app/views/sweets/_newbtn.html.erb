@@ -1,0 +1,9 @@
+  <!-- ユーザーがログインしてたら -->
+  <% if user_signed_in? %>
+    <div class="sweet-new-btn">
+      <%= link_to new_sweet_path, method: :get do %>
+        <i class="fas fa-plus-circle fa-3x"></i>
+      <% end %>
+    </div>
+  <% else %>
+  <% end %>

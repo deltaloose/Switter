@@ -1,97 +1,38 @@
-<!-- カテゴリとランキングはrender -->
-
-<!-- 検索バー -->
-<%= search_form_for @q do |f| %>
-  <!-- f.label :name, "Keyword" %-->
-  <%= f.search_field :name_or_opinion_cont, placeholder:"おかし検索"  %>
-  <%= f.submit "検索" %>
-<% end %>
-<%= link_to "検索クリア", sweets_path %>
-<!-- 一覧部分 -->
-<h2>タイムライン</h2>
-<table class="">
-  <thead>
-    <tr>
-      <th class=""><%= sort_link(@q, :name, "タイトル") %></th>
-      <th class="">コメント数</th>
-      <th class="">いいね数</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @sweets.each do |sweet| %>
-    <tr>
-      <td><%= link_to sweet.name, sweet_path(sweet.id) %></td>
-      <td><%= sweet.sweet_comments.count %>件</td>
-      <!-- ユーザーがログインしてたら -->
-      <% if user_signed_in? %>
-        <!-- いいね表示 -->
-        <% if sweet.favorited_by?(current_user) %>
-        <td>
-          <!-- いいねあるとき -->
-          <%= link_to sweet_favorites_path(sweet), method: :delete do %>
-          <%= sweet.favorites.count %>いいね
-          <% end %>
-        </td>
-        <% else %>
-        <td>
-          <!-- いいねないとき -->
-          <%= link_to sweet_favorites_path(sweet), method: :post do %>
-          <%= sweet.favorites.count %>いいね
-          <% end %>
-        </td>
-        <% end %>
-      <% else %><!-- ログインしてないとき -->
-        <td><%= sweet.favorites.count %>いいね</td>
-      <% end %>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<!-- ランキング -->
-<h2>いいねランキング</h2>
-<table class="">
-  <thead>
-    <tr>
-      <th class="">タイトル</th>
-      <th class="">コメント数</th>
-      <th class="">いいね数</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @all_ranks.each do |sweet| %>
-    <tr>
-      <td><%= link_to sweet.name, sweet_path(sweet.id) %></td>
-      <td><%= sweet.sweet_comments.count %>件</td>
-      <!-- ユーザーがログインしてたら -->
-      <% if user_signed_in? %>
-        <!-- いいね表示 -->
-        <% if sweet.favorited_by?(current_user) %>
-        <td>
-          <!-- いいねあるとき -->
-          <%= link_to sweet_favorites_path(sweet), method: :delete do %>
-          <%= sweet.favorites.count %>いいね
-          <% end %>
-        </td>
-        <% else %>
-        <td>
-          <!-- いいねないとき -->
-          <%= link_to sweet_favorites_path(sweet), method: :post do %>
-          <%= sweet.favorites.count %>いいね
-          <% end %>
-        </td>
-        <% end %>
-      <% else %><!-- ログインしてないとき -->
-        <td><%= sweet.favorites.count %>いいね</td>
-      <% end %>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-<!-- ユーザーがログインしてたら -->
-<% if user_signed_in? %>
-  <%= link_to "＋", new_sweet_path %>
-<% else %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <!-- カテゴリとランキングはrender -->
+    <!--div class="sweet-body">
+      <div class="col-xs-3">
+        <div class="favorite-ranking">
+          <-- ランキング >
+          <h2>いいねランキング</h2>
+          <table class="">
+            <thead>
+              <tr>
+                <th class=""></th>
+                <th class=""></th>
+              </tr>
+            </thead>
+            <tbody>
+              <-- render 'sweets/table', sweets: @all_ranks %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div-->
+    <div class="col-xs-9">
+      <div class="sweets-index">
+        <!-- 一覧部分 -->
+        <h2 class="index-title">全投稿</h2>
+        <%= sort_link(@q, :name, "おかし名ソート") %>
+        <%= render 'sweets/list', sweets: @sweets %>
+      </div>
+    </div>
+    <div class="col-xs-1">
+      <%= render 'sweets/newbtn' %>
+    </div>
+    <div class="col-xs-2">
+      <%= render 'sweets/search', q: @q %>
+    </div>
+  </div>
+</div>

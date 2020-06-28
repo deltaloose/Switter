@@ -1,5 +1,30 @@
-  <h2><%= @user.name %></h2>
-  <h3><%= @user.email %></h3>
-  <%= attachment_image_tag @user, :user_image, format: 'jpeg', fallback:"no_image2.jpg", class: "img" %>
-  <p>Favorite</p>
-  <%= link_to "Edit", edit_user_path(current_user) %>
+<div class="container">
+  <div class="row">
+    <div class="sweet-body">
+      <div class="col-xs-1">
+        <div class="user-photo">
+          <%= attachment_image_tag @user, :user_image, format: 'jpeg', size: "60x60", fallback: "no_image.jpg", class: "img-circle pull-left profile-thumb" %>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <h2><%= @user.name %></h2>
+        <!--h3>< @user.email %></h3-->
+        <% if user_signed_in? %>
+          <% if current_user %>
+            <br><%= link_to "Edit", edit_user_path(current_user) %>
+          <% end %>
+        <% else %>
+        <% end %>
+      </div>
+      <div class="col-xs-2">
+        <p>Favorite</p>
+      </div>
+      <div class="col-xs-1">
+        <%= render 'sweets/newbtn' %>
+      </div>
+      <div class="col-xs-2">
+        <%= render 'sweets/search', q: @q %>
+      </div>
+    </div>
+  </div>
+</div>

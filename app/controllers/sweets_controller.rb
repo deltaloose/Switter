@@ -6,6 +6,8 @@ class SweetsController < ApplicationController
   #おかし新規登録ページの表示
   def new
     @sweet = Sweet.new
+    @q = Sweet.ransack(params[:q])
+    @sweets = @q.result(distinct: true)
   end
   #おかしの新規作成
   def create
@@ -27,10 +29,14 @@ class SweetsController < ApplicationController
   def show
     @sweet = Sweet.find(params[:id])
     @sweet_comment = SweetComment.new
+    @q = Sweet.ransack(params[:q])
+    @sweets = @q.result(distinct: true)
   end
   #おかし編集表示
   def edit
     @sweet = Sweet.find(params[:id])
+    @q = Sweet.ransack(params[:q])
+    @sweets = @q.result(distinct: true)
   end
   #おかし編集
   def update

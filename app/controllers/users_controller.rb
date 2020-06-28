@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
-    @sweets = @user.sweets
+    @q = Sweet.ransack(params[:q])
+    @sweets = @q.result(distinct: true)
   end
   def edit
     if
@@ -12,11 +13,13 @@ class UsersController < ApplicationController
     else
        render :show
     end
+    @q = Sweet.ransack(params[:q])
+    @sweets = @q.result(distinct: true)
   end
   def update
-    @user = current_user
-    if @user.update(user_params)
-       redirect_to user_path(@user.id)
+    user = current_user
+    if user.update(user_params)
+       redirect_to user_path(user.id)
     else
       render :edit
     end
