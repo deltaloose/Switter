@@ -3,7 +3,9 @@
     <div class="block block-image v1">
       <div class="block-image">
         <div class="view view-first">
-          <%= attachment_image_tag sweet, :sweet_image, format: 'jpeg', fallback:"no_image2.jpg", class: "index-img" %>
+          <%= link_to sweet_path(sweet.id), method: :get do %>
+            <%= attachment_image_tag sweet, :sweet_image, format: 'jpeg', fallback:"no_image2.jpg", class: "index-img" %>
+          <% end %>
         </div>
       </div>
       <div class="sweet-link">
