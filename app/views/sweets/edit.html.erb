@@ -1,19 +1,30 @@
-<%= render 'sweets/search', q: @q %>
-<div class="sweet-body">
-  <h2>Edit Sweet</h2>
-  <%= form_for(@sweet, url: sweet_path) do |f| %>
-    <div class="">
-      <%= f.text_field :name %>
+<div class="container">
+  <div class="row">
+    <div class="sweet-body">
+      <div class="col-xs-9">
+        <h2>Edit Sweet</h2>
+        <%= form_for(@sweet, url: sweet_path) do |f| %>
+          <div class="">
+            <%= f.text_field :name %>
+          </div>
+          <div class="">
+            <%= f.text_area :opinion %>
+          </div>
+          <div class="">
+            <%= f.attachment_field :sweet_image %>
+          </div>
+          <!--div class="">
+            <= text_field_tag 'sweet[tag_list]', @sweet.tag_list.join(","), placeholder:"タグ" %>
+          </div-->
+          <%= f.submit '変更保存' %>
+        <% end %>
+      </div>
+      <div class="col-xs-1">
+        <%= render 'sweets/newbtn' %>
+      </div>
+      <div class="col-xs-2">
+        <%= render 'sweets/search', q: @q %>
+      </div>
     </div>
-    <div class="">
-      <%= f.text_area :opinion %>
-    </div>
-    <div class="">
-      <%= f.attachment_field :sweet_image %>
-    </div>
-    <!--div class="">
-      <= text_field_tag 'sweet[tag_list]', @sweet.tag_list.join(","), placeholder:"タグ" %>
-    </div-->
-    <%= f.submit '変更保存' %>
-  <% end %>
+  </div>
 </div>
