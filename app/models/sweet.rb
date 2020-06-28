@@ -6,5 +6,8 @@ class Sweet < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
   attachment :sweet_image
-  #acts_as_taggable #タグのエイリアス
+  #バリデーション
+  validates :name, presence: true
+  validates :opinion, presence: true, length: { maximum:200 }
+  validates :sweet_image, presence: true
 end

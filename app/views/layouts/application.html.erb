@@ -18,23 +18,17 @@
           <ul class="ul-header">
             <% if user_signed_in? %>
               <li class="header">
-                <%= link_to "Profile", user_path(current_user) %>
+                <%= link_to "プロフィール", user_path(current_user) %>
               </li>
               <li class="header">
-                About
-              </li>
-              <li class="header">
-                <%= link_to "logout", destroy_user_session_path, method: :delete %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
               </li>
             <% else %>
               <li class="header">
-                About
+                <%= link_to "会員登録", new_user_registration_path %>
               </li>
               <li class="header">
-                <%= link_to "Sign up", new_user_registration_path %>
-              </li>
-              <li class="header">
-                <%= link_to "login", new_user_session_path %>
+                <%= link_to "ログイン", new_user_session_path %>
               </li>
             <% end %>
           </ul>

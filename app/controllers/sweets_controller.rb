@@ -11,10 +11,16 @@ class SweetsController < ApplicationController
   end
   #おかしの新規作成
   def create
-    sweet = current_user.sweets.new(sweet_params)
-    sweet.user_id = current_user.id
-    sweet.save
-    redirect_to sweets_path
+    @sweet = current_user.sweets.new(sweet_params)
+    @sweet.user_id = current_user.id
+    @q = Sweet.ransack(params[:q])
+    @sweets = @q.result(distinct: true)
+    if @sweet.save
+      flash[:success] = 'おかし登録が完了しました！'
+      redirect_to sweets_path
+    else
+      render :new
+    end
   end
   #おかし一覧
   def index
