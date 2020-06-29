@@ -16,7 +16,6 @@ class SweetsController < ApplicationController
     @q = Sweet.ransack(params[:q])
     @sweets = @q.result(distinct: true)
     if @sweet.save
-      flash[:success] = 'おかし登録が完了しました！'
       redirect_to sweets_path
     else
       render :new

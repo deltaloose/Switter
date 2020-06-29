@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="sweet-body">
+    <%= render 'layouts/error_messages', model: @sweet %>
       <div class="col-xs-9">
         <h2>Edit Sweet</h2>
         <%= form_for(@sweet, url: sweet_path) do |f| %>

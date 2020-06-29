@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="sweet-body">
+    <%= render 'layouts/error_messages', model: @sweet_comment %>
       <div class="col-xs-6">
         <h2><%= @sweet.name %></h2>
         <!-- @sweet.tag_list.each do |tag| %>
