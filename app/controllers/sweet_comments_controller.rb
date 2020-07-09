@@ -7,11 +7,12 @@ class SweetCommentsController < ApplicationController
     @sweets = @q.result(distinct: true)
     @comment = current_user.sweet_comments.new(sweet_comment_params)
     @comment.sweet_id = @sweet.id
-    if @comment.save
+    #if @comment.save
+      @comment.save
       redirect_to sweet_path(@sweet)
-    else
-      render 'sweets/show'
-    end
+    #else
+    #  render 'sweets/show'
+    #end
   end
 #コメント投稿時のストロングパラメータ
   private
