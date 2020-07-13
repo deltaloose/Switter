@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :sweet_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   attachment :user_image
+  #バリデーション
+  validates :name, presence: true
 end

@@ -8,6 +8,9 @@
       </div>
       <div class="col-xs-6">
         <h2><%= @user.name %></h2>
+        <% if present? %><!-- もし存在していたら -->
+          <%= @user.opinion %>
+        <% end %>
         <!--h3>< @user.email %></h3-->
         <% if user_signed_in? %>
           <% if current_user %>
